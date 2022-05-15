@@ -1,4 +1,4 @@
-#ifndef LOGINFORM_H
+﻿#ifndef LOGINFORM_H
 #define LOGINFORM_H
 
 #include <QMainWindow>
@@ -14,6 +14,8 @@ class LoginForm : public QMainWindow
 public:
     explicit LoginForm(QWidget *parent = nullptr);
     ~LoginForm();
+
+private slots:
 
 private:
     Ui::LoginForm *ui;
