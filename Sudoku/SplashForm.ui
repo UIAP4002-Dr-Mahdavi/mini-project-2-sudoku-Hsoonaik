@@ -57,8 +57,8 @@
     </property>
     <property name="styleSheet">
      <string notr="true">background-color:#ffffff;
-image: url(:/Logo/Logo.png);
 border-radius : 50%;	
+image: url(:/Logo/Logo);
 display : flex;
 justify-content : center;</string>
     </property>

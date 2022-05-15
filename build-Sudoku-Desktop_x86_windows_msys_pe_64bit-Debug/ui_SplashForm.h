@@ -55,8 +55,8 @@ public:
         frame->setObjectName(QString::fromUtf8("frame"));
         frame->setGeometry(QRect(120, 30, 141, 141));
         frame->setStyleSheet(QString::fromUtf8("background-color:#ffffff;\n"
-"image: url(:/Logo/Logo.png);\n"
 "border-radius : 50%;	\n"
+"image: url(:/Logo/Logo);\n"
 "display : flex;\n"
 "justify-content : center;"));
         frame->setFrameShape(QFrame::StyledPanel);
