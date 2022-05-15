@@ -1,4 +1,4 @@
-﻿#include "loginform.h"
+#include "loginform.h"
 #include "ui_loginform.h"
 
 LoginForm::LoginForm(QWidget *parent) :
@@ -12,8 +12,3 @@ LoginForm::~LoginForm()
 {
     delete ui;
 }
-
-//for textboxes max length (17 to 31)
-
-
-

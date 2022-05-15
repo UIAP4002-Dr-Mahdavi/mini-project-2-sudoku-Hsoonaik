@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>410</width>
+    <width>360</width>
     <height>300</height>
    </rect>
   </property>
@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #0a0e1a;
+   <string notr="true">background : #353d60
 
 
 </string>
@@ -23,143 +23,141 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>10</y>
-      <width>411</width>
+      <x>110</x>
+      <y>-10</y>
+      <width>141</width>
       <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">color : rgb(255, 255, 255);
-font:  30pt &quot;Rockwell Extra Bold&quot;;
+     <string notr="true">font:  30pt &quot;Rockwell Extra Bold&quot;;
 </string>
     </property>
     <property name="text">
      <string>Login</string>
     </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
    </widget>
    <widget class="QWidget" name="verticalLayoutWidget">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
     <property name="geometry">
      <rect>
+<<<<<<< HEAD
       <x>30</x>
       <y>80</y>
       <width>351</width>
-      <height>101</height>
+      <height>117</height>
+=======
+      <x>110</x>
+      <y>70</y>
+      <width>231</width>
+      <height>71</height>
+>>>>>>> parent of f703069 (Login form ui is complited now !)
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <layout class="QGridLayout" name="gridLayout">
-       <item row="0" column="0">
-        <widget class="QLabel" name="label_5">
-         <property name="styleSheet">
-          <string notr="true">color : rgb(255, 255, 255);
-font:  12pt &quot;Rockwell Extra Bold&quot;;
-</string>
-         </property>
-         <property name="text">
-          <string>Username : </string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="label_6">
-         <property name="styleSheet">
-          <string notr="true">color : rgb(255, 255, 255);
-font:  12pt &quot;Rockwell Extra Bold&quot;;
-</string>
-         </property>
-         <property name="text">
-          <string>Password  : </string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QLineEdit" name="lineEdit">
-         <property name="styleSheet">
-          <string notr="true">background-color: #515a82;
-font: 15pt &quot;Calibri Light&quot;;
-border : 0px;
-color : rgb(255, 255, 255);
-</string>
-         </property>
-         <property name="maxLength">
-          <number>20</number>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QLineEdit" name="lineEdit_2">
-         <property name="styleSheet">
-          <string notr="true">background-color: #515a82;
-font: 15pt &quot;Calibri Light&quot;;
-color : rgb(255, 255, 255);
-border : 0px;
-</string>
-         </property>
-         <property name="maxLength">
-          <number>15</number>
-         </property>
-         <property name="echoMode">
-          <enum>QLineEdit::Password</enum>
-         </property>
-        </widget>
-       </item>
-      </layout>
+      <widget class="QTextEdit" name="textEdit_2">
+       <property name="styleSheet">
+        <string notr="true">background-color: #0a0e1a;
+font: 25 8pt &quot;Calibri Light&quot;;</string>
+       </property>
+      </widget>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <widget class="QLabel" name="label_4">
-         <property name="styleSheet">
-          <string notr="true">color : rgb(255, 255, 255);
-font: 11pt &quot;Calibri Light&quot;;</string>
-         </property>
-         <property name="text">
-          <string>                                         Don't have an account?</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 11pt &quot;Calibri Light&quot;;
-background-color : #9aa0c6;
-color : rgb(0, 0, 0);
+      <widget class="QTextEdit" name="textEdit">
+       <property name="styleSheet">
+        <string notr="true">background-color: #0a0e1a;
+font: 25 8pt &quot;Calibri Light&quot;;</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>70</y>
+      <width>101</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetFixedSize</enum>
+     </property>
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="styleSheet">
+        <string notr="true">font:  10pt &quot;Rockwell Extra Bold&quot;;
+</string>
+       </property>
+       <property name="text">
+        <string>Username : </string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_3">
+       <property name="styleSheet">
+        <string notr="true">font:  10pt &quot;Rockwell Extra Bold&quot;;
+</string>
+       </property>
+       <property name="text">
+        <string>Password  : </string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>140</y>
+      <width>224</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label_4">
+       <property name="styleSheet">
+        <string notr="true">font: 11pt &quot;Calibri Light&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Don't have an account?</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton">
+       <property name="styleSheet">
+        <string notr="true">font: 11pt &quot;Calibri Light&quot;;
+background-color : #1d243d;
+
 padding : 5px;
 border-radius : 10px;</string>
-         </property>
-         <property name="text">
-          <string>Sign up!</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
+       </property>
+       <property name="text">
+        <string>Sign up!</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>220</y>
+      <x>130</x>
+      <y>200</y>
       <width>111</width>
       <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">font:  20pt &quot;Rockwell Extra Bold&quot;;
-background-color : #9aa0c6;
-color : rgb(0, 0, 0);
+background-color : #1d243d;
+
 padding : 5px;
 border-radius : 15px;</string>
     </property>
@@ -173,7 +171,7 @@ border-radius : 15px;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>410</width>
+     <width>360</width>
      <height>20</height>
     </rect>
    </property>

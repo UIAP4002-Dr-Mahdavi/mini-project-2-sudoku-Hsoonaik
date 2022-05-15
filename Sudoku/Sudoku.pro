@@ -22,11 +22,11 @@ SOURCES += \
 
 HEADERS += \
     loginform.h \
-    mainwindow.h
+    mainwindow.h \
 
 FORMS += \
     SplashForm.ui \
-    loginform.ui
+    loginform.ui \
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
