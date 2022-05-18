@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SignUpForm</class>
+ <widget class="QMainWindow" name="SignUpForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>410</width>
+    <height>340</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #0a0e1a;
+
+
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>80</y>
+      <width>351</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="UserNameTB">
+         <property name="styleSheet">
+          <string notr="true">background-color: #515a82;
+font: 15pt &quot;Calibri Light&quot;;
+color : rgb(255, 255, 255);
+border : 0px;
+</string>
+         </property>
+         <property name="maxLength">
+          <number>15</number>
+         </property>
+         <property name="echoMode">
+          <enum>QLineEdit::Normal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_5">
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color : rgb(255, 255, 255);
+font:  12pt &quot;Rockwell Extra Bold&quot;;
+</string>
+         </property>
+         <property name="text">
+          <string>First Name : </string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_6">
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color : rgb(255, 255, 255);
+font:  12pt &quot;Rockwell Extra Bold&quot;;
+</string>
+         </property>
+         <property name="text">
+          <string>Username : </string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="FNamTB">
+         <property name="styleSheet">
+          <string notr="true">background-color: #515a82;
+font: 15pt &quot;Calibri Light&quot;;
+border : 0px;
+color : rgb(255, 255, 255);
+</string>
+         </property>
+         <property name="maxLength">
+          <number>20</number>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="PasswordTB">
+         <property name="styleSheet">
+          <string notr="true">background-color: #515a82;
+font: 15pt &quot;Calibri Light&quot;;
+color : rgb(255, 255, 255);
+border : 0px;
+</string>
+         </property>
+         <property name="maxLength">
+          <number>15</number>
+         </property>
+         <property name="echoMode">
+          <enum>QLineEdit::Password</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_7">
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color : rgb(255, 255, 255);
+font:  12pt &quot;Rockwell Extra Bold&quot;;
+</string>
+         </property>
+         <property name="text">
+          <string>Password : </string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+         <property name="textInteractionFlags">
+          <set>Qt::TextBrowserInteraction</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="LNameTB">
+         <property name="styleSheet">
+          <string notr="true">background-color: #515a82;
+font: 15pt &quot;Calibri Light&quot;;
+border : 0px;
+color : rgb(255, 255, 255);
+</string>
+         </property>
+         <property name="maxLength">
+          <number>20</number>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_8">
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color : rgb(255, 255, 255);
+font:  12pt &quot;Rockwell Extra Bold&quot;;
+</string>
+         </property>
+         <property name="text">
+          <string>Last Name : </string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QPushButton" name="Register">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>260</y>
+      <width>111</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font:  20pt &quot;Rockwell Extra Bold&quot;;
+background-color : #9aa0c6;
+color : rgb(0, 0, 0);
+padding : 5px;
+border-radius : 15px;</string>
+    </property>
+    <property name="text">
+     <string>OK !</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>411</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color : rgb(255, 255, 255);
+font:  30pt &quot;Rockwell Extra Bold&quot;;
+</string>
+    </property>
+    <property name="text">
+     <string>Sign up</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Register_2">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>280</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font:  12pt &quot;Rockwell Extra Bold&quot;;
+background-color : #9aa0c6;
+color : rgb(0, 0, 0);
+padding : 5px;
+border-radius : 15px;</string>
+    </property>
+    <property name="text">
+     <string>Back</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>410</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <tabstops>
+  <tabstop>FNamTB</tabstop>
+  <tabstop>LNameTB</tabstop>
+  <tabstop>UserNameTB</tabstop>
+  <tabstop>PasswordTB</tabstop>
+  <tabstop>Register</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

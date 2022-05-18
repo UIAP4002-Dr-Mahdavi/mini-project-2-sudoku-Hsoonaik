@@ -50,7 +50,7 @@ font:  30pt &quot;Rockwell Extra Bold&quot;;
       <x>30</x>
       <y>80</y>
       <width>351</width>
-      <height>117</height>
+      <height>101</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -66,6 +66,9 @@ font:  12pt &quot;Rockwell Extra Bold&quot;;
          <property name="text">
           <string>Username : </string>
          </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
         </widget>
        </item>
        <item row="1" column="0">
@@ -76,12 +79,15 @@ font:  12pt &quot;Rockwell Extra Bold&quot;;
 </string>
          </property>
          <property name="text">
-          <string>Password  : </string>
+          <string>Password : </string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
          </property>
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QLineEdit" name="lineEdit">
+        <widget class="QLineEdit" name="UsernameTB">
          <property name="styleSheet">
           <string notr="true">background-color: #515a82;
 font: 15pt &quot;Calibri Light&quot;;
@@ -95,7 +101,7 @@ color : rgb(255, 255, 255);
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QLineEdit" name="lineEdit_2">
+        <widget class="QLineEdit" name="PasswordTB">
          <property name="styleSheet">
           <string notr="true">background-color: #515a82;
 font: 15pt &quot;Calibri Light&quot;;
