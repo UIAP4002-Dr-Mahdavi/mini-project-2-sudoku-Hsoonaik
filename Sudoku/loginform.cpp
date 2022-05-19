@@ -6,6 +6,8 @@
 #include <fstream>
 #include <QMessageBox>
 #include <iostream>
+#include <menu.h>
+#include "ui_menu.h"
 
 using namespace std;
 
@@ -31,10 +33,10 @@ void LoginForm::on_pushButton_clicked() //for sign up now !!
     S->show ();
 }
 
-int ShowFailMessage()
+int ShowMessage(QString Message)
 {
 	QMessageBox msgBox;
-	msgBox.setInformativeText("The username or password is incorrect.");
+	msgBox.setInformativeText(Message);
 	msgBox.setStandardButtons(QMessageBox::Ok);
 	msgBox.setStyleSheet ("background-color : #0a0e1a; color : #FFFFFF; width : 300px;font:  10pt \"Rockwell Extra Bold\";");
 	msgBox.setDefaultButton(QMessageBox::Ok);
@@ -52,7 +54,7 @@ bool FindData(string EntryUsername , string EntryPassword)
 
 	if (!File)
 	{
-		ShowFailMessage ();
+		ShowMessage("The username or password is incorrect.");
 	}
 
 	while (File.is_open())
@@ -95,13 +97,18 @@ bool FindData(string EntryUsername , string EntryPassword)
 
 void LoginForm::on_pushButton_2_clicked()
 {
-	if(FindData(ui->UsernameTB->text ().toStdString() , ui->PasswordTB->text ().toStdString()))
+	if(FindData(ui->UsernameTB->text ().toStdString() , ui->PasswordTB->text ().toStdString())) // Username and Password were found
 	{
-		cerr  << "OK";
+		Menu *F = new Menu();
+		//F->SetUser (User);
+		//F->Welcome ();
+		//F->ui->WelcomeLB->setText (this->getUser ()->getFName ());
+		this->close ();
+		F->show ();
 	}
 	else
 	{
-		ShowFailMessage();
+		ShowMessage("The username or password is incorrect.");
 
 		ui->UsernameTB->clear();
 		ui->PasswordTB->clear();

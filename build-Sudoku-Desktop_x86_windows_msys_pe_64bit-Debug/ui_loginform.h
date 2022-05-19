@@ -48,6 +48,8 @@ public:
         if (LoginForm->objectName().isEmpty())
             LoginForm->setObjectName(QString::fromUtf8("LoginForm"));
         LoginForm->resize(410, 300);
+        LoginForm->setMinimumSize(QSize(410, 300));
+        LoginForm->setMaximumSize(QSize(410, 300));
         LoginForm->setCursor(QCursor(Qt::ArrowCursor));
         LoginForm->setStyleSheet(QString::fromUtf8("background-color: #0a0e1a;\n"
 "\n"
@@ -57,7 +59,7 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(0, 10, 411, 51));
+        label->setGeometry(QRect(0, 0, 411, 51));
         label->setStyleSheet(QString::fromUtf8("color : rgb(255, 255, 255);\n"
 "font:  30pt \"Rockwell Extra Bold\";\n"
 ""));

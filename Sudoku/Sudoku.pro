@@ -19,18 +19,21 @@ SOURCES += \
     loginform.cpp \
     main.cpp \
     mainwindow.cpp \
+    menu.cpp \
     signupform.cpp \
     user.cpp
 
 HEADERS += \
     loginform.h \
     mainwindow.h \
+    menu.h \
     signupform.h \
     user.h
 
 FORMS += \
     SplashForm.ui \
     loginform.ui \
+    menu.ui \
     signupform.ui
 
 # Default rules for deployment.

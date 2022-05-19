@@ -9,6 +9,7 @@ class User
 public:
 	User();
 
+
 	void SetData(int id , QString FName , QString LName , QString Username , QString Password)
 	{
 		this->id = id;

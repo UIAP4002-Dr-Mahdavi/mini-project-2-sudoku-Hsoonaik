@@ -49,6 +49,8 @@ public:
         if (SignUpForm->objectName().isEmpty())
             SignUpForm->setObjectName(QString::fromUtf8("SignUpForm"));
         SignUpForm->resize(410, 340);
+        SignUpForm->setMinimumSize(QSize(410, 340));
+        SignUpForm->setMaximumSize(QSize(410, 340));
         SignUpForm->setCursor(QCursor(Qt::ArrowCursor));
         SignUpForm->setStyleSheet(QString::fromUtf8("background-color: #0a0e1a;\n"
 "\n"

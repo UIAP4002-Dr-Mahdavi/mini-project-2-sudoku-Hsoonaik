@@ -34,8 +34,8 @@ public:
     QGridLayout *gridLayout;
     QLabel *label_5;
     QLabel *label_6;
-    QLineEdit *lineEdit;
-    QLineEdit *lineEdit_2;
+    QLineEdit *UsernameTB;
+    QLineEdit *PasswordTB;
     QHBoxLayout *horizontalLayout;
     QLabel *label_4;
     QPushButton *pushButton;
@@ -48,6 +48,9 @@ public:
         if (LoginForm->objectName().isEmpty())
             LoginForm->setObjectName(QString::fromUtf8("LoginForm"));
         LoginForm->resize(410, 300);
+        LoginForm->setMinimumSize(QSize(410, 300));
+        LoginForm->setMaximumSize(QSize(410, 300));
+        LoginForm->setCursor(QCursor(Qt::ArrowCursor));
         LoginForm->setStyleSheet(QString::fromUtf8("background-color: #0a0e1a;\n"
 "\n"
 "\n"
@@ -56,7 +59,7 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(0, 10, 411, 51));
+        label->setGeometry(QRect(0, 0, 411, 51));
         label->setStyleSheet(QString::fromUtf8("color : rgb(255, 255, 255);\n"
 "font:  30pt \"Rockwell Extra Bold\";\n"
 ""));
@@ -88,28 +91,28 @@ public:
 
         gridLayout->addWidget(label_6, 1, 0, 1, 1);
 
-        lineEdit = new QLineEdit(verticalLayoutWidget);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setStyleSheet(QString::fromUtf8("background-color: #515a82;\n"
+        UsernameTB = new QLineEdit(verticalLayoutWidget);
+        UsernameTB->setObjectName(QString::fromUtf8("UsernameTB"));
+        UsernameTB->setStyleSheet(QString::fromUtf8("background-color: #515a82;\n"
 "font: 15pt \"Calibri Light\";\n"
 "border : 0px;\n"
 "color : rgb(255, 255, 255);\n"
 ""));
-        lineEdit->setMaxLength(20);
+        UsernameTB->setMaxLength(20);
 
-        gridLayout->addWidget(lineEdit, 0, 1, 1, 1);
+        gridLayout->addWidget(UsernameTB, 0, 1, 1, 1);
 
-        lineEdit_2 = new QLineEdit(verticalLayoutWidget);
-        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
-        lineEdit_2->setStyleSheet(QString::fromUtf8("background-color: #515a82;\n"
+        PasswordTB = new QLineEdit(verticalLayoutWidget);
+        PasswordTB->setObjectName(QString::fromUtf8("PasswordTB"));
+        PasswordTB->setStyleSheet(QString::fromUtf8("background-color: #515a82;\n"
 "font: 15pt \"Calibri Light\";\n"
 "color : rgb(255, 255, 255);\n"
 "border : 0px;\n"
 ""));
-        lineEdit_2->setMaxLength(15);
-        lineEdit_2->setEchoMode(QLineEdit::Password);
+        PasswordTB->setMaxLength(15);
+        PasswordTB->setEchoMode(QLineEdit::Password);
 
-        gridLayout->addWidget(lineEdit_2, 1, 1, 1, 1);
+        gridLayout->addWidget(PasswordTB, 1, 1, 1, 1);
 
 
         verticalLayout->addLayout(gridLayout);
@@ -126,6 +129,7 @@ public:
         pushButton = new QPushButton(verticalLayoutWidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setEnabled(true);
+        pushButton->setCursor(QCursor(Qt::PointingHandCursor));
         pushButton->setStyleSheet(QString::fromUtf8("font: 11pt \"Calibri Light\";\n"
 "background-color : #9aa0c6;\n"
 "color : rgb(0, 0, 0);\n"
@@ -140,6 +144,7 @@ public:
         pushButton_2 = new QPushButton(centralwidget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
         pushButton_2->setGeometry(QRect(150, 220, 111, 51));
+        pushButton_2->setCursor(QCursor(Qt::PointingHandCursor));
         pushButton_2->setStyleSheet(QString::fromUtf8("font:  20pt \"Rockwell Extra Bold\";\n"
 "background-color : #9aa0c6;\n"
 "color : rgb(0, 0, 0);\n"

@@ -82,7 +82,7 @@ bool duplicate_username_check(string Username)
 	return 1;
 }
 
-int ShowMessage(QString Message)
+int ShowMessage1(QString Message)
 {
 	QMessageBox msgBox;
 	msgBox.setInformativeText(Message);
@@ -105,15 +105,16 @@ void SignUpForm::on_Register_clicked()
 	{
 		User.SaveData ();
 		SaveId(User.getId ());
-		ShowMessage ("Your registration was successfully completed.");
+		ShowMessage1 ("Your registration was successfully completed.");
 
 		LoginForm *F = new LoginForm;
+		F->SetUser(&User);
 		this->close();
 		F->show();
 	}
 	else
 	{
-		ShowMessage ("Username already exists");
+		ShowMessage1 ("Username already exists");
 
 		User.ClearData();
 
