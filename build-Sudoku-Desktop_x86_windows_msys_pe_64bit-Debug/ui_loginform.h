@@ -48,6 +48,7 @@ public:
         if (LoginForm->objectName().isEmpty())
             LoginForm->setObjectName(QString::fromUtf8("LoginForm"));
         LoginForm->resize(410, 300);
+        LoginForm->setCursor(QCursor(Qt::ArrowCursor));
         LoginForm->setStyleSheet(QString::fromUtf8("background-color: #0a0e1a;\n"
 "\n"
 "\n"
@@ -126,6 +127,7 @@ public:
         pushButton = new QPushButton(verticalLayoutWidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setEnabled(true);
+        pushButton->setCursor(QCursor(Qt::PointingHandCursor));
         pushButton->setStyleSheet(QString::fromUtf8("font: 11pt \"Calibri Light\";\n"
 "background-color : #9aa0c6;\n"
 "color : rgb(0, 0, 0);\n"
@@ -140,6 +142,7 @@ public:
         pushButton_2 = new QPushButton(centralwidget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
         pushButton_2->setGeometry(QRect(150, 220, 111, 51));
+        pushButton_2->setCursor(QCursor(Qt::PointingHandCursor));
         pushButton_2->setStyleSheet(QString::fromUtf8("font:  20pt \"Rockwell Extra Bold\";\n"
 "background-color : #9aa0c6;\n"
 "color : rgb(0, 0, 0);\n"

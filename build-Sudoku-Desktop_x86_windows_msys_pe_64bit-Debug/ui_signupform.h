@@ -49,6 +49,7 @@ public:
         if (SignUpForm->objectName().isEmpty())
             SignUpForm->setObjectName(QString::fromUtf8("SignUpForm"));
         SignUpForm->resize(410, 340);
+        SignUpForm->setCursor(QCursor(Qt::ArrowCursor));
         SignUpForm->setStyleSheet(QString::fromUtf8("background-color: #0a0e1a;\n"
 "\n"
 "\n"
@@ -157,6 +158,7 @@ public:
         Register = new QPushButton(centralwidget);
         Register->setObjectName(QString::fromUtf8("Register"));
         Register->setGeometry(QRect(150, 260, 111, 51));
+        Register->setCursor(QCursor(Qt::PointingHandCursor));
         Register->setStyleSheet(QString::fromUtf8("font:  20pt \"Rockwell Extra Bold\";\n"
 "background-color : #9aa0c6;\n"
 "color : rgb(0, 0, 0);\n"
@@ -172,6 +174,7 @@ public:
         Register_2 = new QPushButton(centralwidget);
         Register_2->setObjectName(QString::fromUtf8("Register_2"));
         Register_2->setGeometry(QRect(330, 280, 71, 31));
+        Register_2->setCursor(QCursor(Qt::PointingHandCursor));
         Register_2->setStyleSheet(QString::fromUtf8("font:  12pt \"Rockwell Extra Bold\";\n"
 "background-color : #9aa0c6;\n"
 "color : rgb(0, 0, 0);\n"

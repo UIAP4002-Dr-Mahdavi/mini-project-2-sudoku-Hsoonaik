@@ -66,7 +66,7 @@ string find_username(string tmp)
 	 while (File.is_open ())
 	 {
 		 File >> Username;
-		 if(Username == tmp || Username == "")
+		 if(Username == tmp)
 			 return Username;
 
 		 if(File.eof())

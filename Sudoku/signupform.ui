@@ -10,6 +10,9 @@
     <height>340</height>
    </rect>
   </property>
+  <property name="cursor">
+   <cursorShape>ArrowCursor</cursorShape>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
@@ -185,6 +188,9 @@ font:  12pt &quot;Rockwell Extra Bold&quot;;
       <height>51</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="styleSheet">
      <string notr="true">font:  20pt &quot;Rockwell Extra Bold&quot;;
 background-color : #9aa0c6;
@@ -225,6 +231,9 @@ font:  30pt &quot;Rockwell Extra Bold&quot;;
       <width>71</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">font:  12pt &quot;Rockwell Extra Bold&quot;;
