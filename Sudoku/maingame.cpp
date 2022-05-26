@@ -9,7 +9,8 @@ MainGame::MainGame(QWidget *parent) :
 {
 	ui->setupUi(this);
 
-	Table T;
+	Table tmp;
+	setTable (tmp);
 
 
 	T.setRandomDatas ();
@@ -22,6 +23,7 @@ MainGame::MainGame(QWidget *parent) :
 				continue;
 			setNewItem (i , j , value);
 		}
+	T.setRandomDone = true;
 }
 
 MainGame::~MainGame()
@@ -36,4 +38,24 @@ void MainGame::on_tableWidget_cellChanged(int row, int column) // Change text
 {
 	//to set the alignment in center
 	setAlignmentCenter (row , column);
+	if(T.setRandomDone)
+	{
+	int value = ui->tableWidget->item (row , column)->text ().toInt ();
+
+	if(!T.RepitedValueCheck (row , column , value) || !T.RepitedInSquareCheck(row , column , value) || value > 9 || value < 1)
+		ui->tableWidget->item (row , column)->setText ("!");
+
+	else
+		T.Cells[row][column] = value;
+	}
+
+	else
+	{
+		QColor tmp(170, 0, 91);
+		ui->tableWidget->item (row , column)->setBackgroundColor (tmp);
+	}
 }
+
+
+
+

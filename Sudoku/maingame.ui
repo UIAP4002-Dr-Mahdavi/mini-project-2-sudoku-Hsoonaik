@@ -42,10 +42,22 @@
     <property name="geometry">
      <rect>
       <x>193</x>
-      <y>3</y>
+      <y>-3</y>
       <width>16</width>
-      <height>451</height>
+      <height>463</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 0);
+color: rgb(255, 255, 0);
+margin  : 5px;
+
+
+
+
+
+
+</string>
     </property>
     <property name="lineWidth">
      <number>2</number>
@@ -58,10 +70,22 @@
     <property name="geometry">
      <rect>
       <x>392</x>
-      <y>3</y>
+      <y>-3</y>
       <width>16</width>
-      <height>451</height>
+      <height>463</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 0);
+color: rgb(255, 255, 0);
+margin  : 5px;
+
+
+
+
+
+
+</string>
     </property>
     <property name="lineWidth">
      <number>2</number>
@@ -73,11 +97,23 @@
    <widget class="Line" name="line_3">
     <property name="geometry">
      <rect>
-      <x>2</x>
+      <x>-5</x>
       <y>145</y>
-      <width>601</width>
+      <width>610</width>
       <height>16</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 0);
+color: rgb(255, 255, 0);
+margin  : 5px;
+
+
+
+
+
+
+</string>
     </property>
     <property name="lineWidth">
      <number>2</number>
@@ -89,11 +125,23 @@
    <widget class="Line" name="line_4">
     <property name="geometry">
      <rect>
-      <x>2</x>
+      <x>-5</x>
       <y>295</y>
-      <width>601</width>
+      <width>610</width>
       <height>16</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 0);
+color: rgb(255, 255, 0);
+margin  : 5px;
+
+
+
+
+
+
+</string>
     </property>
     <property name="lineWidth">
      <number>2</number>

@@ -46,25 +46,65 @@ public:
         centralwidget->setMaximumSize(QSize(597, 558));
         line = new QFrame(centralwidget);
         line->setObjectName(QString::fromUtf8("line"));
-        line->setGeometry(QRect(193, 3, 16, 451));
+        line->setGeometry(QRect(193, -3, 16, 464));
+        line->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 0);\n"
+"color: rgb(255, 255, 0);\n"
+"margin  : 5px;\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+""));
         line->setLineWidth(2);
         line->setFrameShape(QFrame::VLine);
         line->setFrameShadow(QFrame::Sunken);
         line_2 = new QFrame(centralwidget);
         line_2->setObjectName(QString::fromUtf8("line_2"));
-        line_2->setGeometry(QRect(392, 3, 16, 451));
+        line_2->setGeometry(QRect(392, -3, 16, 464));
+        line_2->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 0);\n"
+"color: rgb(255, 255, 0);\n"
+"margin  : 5px;\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+""));
         line_2->setLineWidth(2);
         line_2->setFrameShape(QFrame::VLine);
         line_2->setFrameShadow(QFrame::Sunken);
         line_3 = new QFrame(centralwidget);
         line_3->setObjectName(QString::fromUtf8("line_3"));
-        line_3->setGeometry(QRect(2, 145, 601, 16));
+        line_3->setGeometry(QRect(-5, 145, 610, 16));
+        line_3->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 0);\n"
+"color: rgb(255, 255, 0);\n"
+"margin  : 5px;\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+""));
         line_3->setLineWidth(2);
         line_3->setFrameShape(QFrame::HLine);
         line_3->setFrameShadow(QFrame::Sunken);
         line_4 = new QFrame(centralwidget);
         line_4->setObjectName(QString::fromUtf8("line_4"));
-        line_4->setGeometry(QRect(2, 295, 601, 16));
+        line_4->setGeometry(QRect(-5, 295, 610, 16));
+        line_4->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 0);\n"
+"color: rgb(255, 255, 0);\n"
+"margin  : 5px;\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+""));
         line_4->setLineWidth(2);
         line_4->setFrameShape(QFrame::HLine);
         line_4->setFrameShadow(QFrame::Sunken);

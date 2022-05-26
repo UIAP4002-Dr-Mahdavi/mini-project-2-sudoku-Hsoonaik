@@ -6,6 +6,8 @@
 
 class Table
 {
+
+	friend class MainGame;
 public:
 	Table()
 	{
@@ -47,7 +49,7 @@ public:
 				c = rand() % 9;
 			}
 
-			while(!RepitedValueCheck (r , c , value))
+			while(!RepitedValueCheck (r , c , value) || !RepitedInSquareCheck (r , c , value))
 				value = rand() % 9 + 1;
 
 			Cells[r][c] = value; // set the value
@@ -55,6 +57,7 @@ public:
 			tmpI = r;
 			tmpJ = c; // for next round of loop
 		}
+
 
 	}
 
@@ -79,10 +82,89 @@ public:
 		 return 0;
 	}
 
+	bool RepitedInSquareCheck(int r , int c , int value)// returns true if its not repited
+	{
+		int Area = FindArea(r , c);
+		switch (Area)
+		{
+		case 1 :
+			return CheckBox (0 , 0 , r , c , value);
+			break;
+		case 2 :
+			return CheckBox (0 , 3 , r , c , value);
+			break;
+		case 3 :
+			return CheckBox (0 , 6 , r , c , value);
+			break;
+		case 4 :
+			return CheckBox (3 , 0 , r , c , value);
+			break;
+		case 5 :
+			return CheckBox (3 , 3 , r , c , value);
+			break;
+		case 6 :
+			return CheckBox (3 , 6 , r , c , value);
+			break;
+		case 7 :
+			return CheckBox (6 , 0 , r , c , value);
+			break;
+		case 8 :
+			return CheckBox (6 , 3 , r , c , value);
+			break;
+		case 9 :
+			return CheckBox (6 , 6 , r , c , value);
+			break;
+		}
+		return 0;
+	}
+
+	bool CheckBox(int r , int c , int Vr , int Vc , int value)
+	{
+
+		for(int i = r ; i < r + 3; i++)
+			for(int j = c ; j < c + 3 ; j++)
+				if(i != Vr && j != Vc && Cells[i][j] == value)
+					return 0;
+		return 1;
+	}
+
+	bool isBetween(int value , int frst , int lst )
+	{
+		if(value <= lst && value >= frst)
+			return 1 ;
+		return 0;
+	}
+
+	int FindArea(int r , int c)
+	{
+		if(isBetween (r , 0 , 2) && isBetween(c , 0 , 2))
+			return 1;
+		if(isBetween (r , 0 , 2) && isBetween(c , 3 , 5))
+			return 2;
+		if(isBetween (r , 0 , 2) && isBetween(c , 6 , 8))
+			return 3;
+		if(isBetween (r , 3 , 5) && isBetween(c , 0 , 2))
+			return 4;
+		if(isBetween (r , 3 , 5) && isBetween(c , 3 , 5))
+			return 5;
+		if(isBetween (r , 3 , 5) && isBetween(c , 6 , 8))
+			return 6;
+		if(isBetween (r , 6 , 8) && isBetween(c , 0 , 2))
+			return 7;
+		if(isBetween (r , 6 , 8) && isBetween(c , 3 , 5))
+			return 8;
+		if(isBetween (r , 6 , 8) && isBetween(c , 6 , 8))
+			return 9;
+
+		return 0 ;
+	}
+
+
 
 
 private:
 	int Cells[9][9];
+	bool setRandomDone;
 
 };
 

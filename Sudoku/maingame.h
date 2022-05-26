@@ -6,7 +6,7 @@
 #include <table.h>
 #include <string>
 #include <qstring.h>
-
+#include <table.h>
 using namespace std;
 namespace Ui {
 class MainGame;
@@ -52,6 +52,10 @@ public:
 
 	//#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 
+	void setTable(Table const & T)
+	{
+		this->T = T;
+	}
 	explicit MainGame(QWidget *parent = nullptr);
 	~MainGame();
 
@@ -59,6 +63,7 @@ private slots:
 	void on_tableWidget_cellChanged(int row, int column);
 
 private:
+	Table T;
 	Ui::MainGame *ui;
 };
 
