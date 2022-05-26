@@ -125,8 +125,6 @@ public:
 
         const bool __sortingEnabled = tableWidget->isSortingEnabled();
         tableWidget->setSortingEnabled(false);
-        QTableWidgetItem *___qtablewidgetitem = tableWidget->item(0, 0);
-        ___qtablewidgetitem->setText(QCoreApplication::translate("MainGame", "25", nullptr));
         tableWidget->setSortingEnabled(__sortingEnabled);
 
     } // retranslateUi

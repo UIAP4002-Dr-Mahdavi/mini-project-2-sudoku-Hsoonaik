@@ -32,8 +32,10 @@ public:
 		for(int i = 0 ; i < 9 ; i ++)
 			for(int j = 0 ; j < 9; j++)
 			{
-				Table.setValue (i , j , 5);
 				string tmp = to_string (Table.getValue (i , j));
+				if(tmp == "0")
+					continue;
+
 				QTableWidgetItem * Item = new QTableWidgetItem();
 				Item->setText (QString::fromStdString (tmp));
 				ui->tableWidget->setItem (i , j , Item);

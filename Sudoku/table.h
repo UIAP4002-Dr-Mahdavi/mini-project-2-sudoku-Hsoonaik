@@ -7,7 +7,12 @@
 class Table
 {
 public:
-	Table();
+	Table()
+	{
+		for(int i = 0 ; i < 9 ; i++)
+			for(int j = 0 ; j < 9 ; j++)
+				Cells[i][j] = 0;
+	}
 
 	void setValue(int i , int j , int Data)
 	{
@@ -22,11 +27,33 @@ public:
 	void setRandomDatas()
 	{
 		srand(time(0));
-		int tmp = rand() % 9 + 1; // to use for checking that the index is unique
-		int tmp2; // for value
+		int tmpI = rand() % 9;
+		int tmpJ = rand() % 9; // to use for checking that the index is unique
+		int tmpValue = rand() % 9 + 1;
+		Cells[tmpI][tmpJ] = tmpValue;
+
+
+		int r  , c , value ; // for value
+
+		r = rand() % 9;
+		c = rand() % 9;
+		value = rand() % 9 + 1;
+
 		for(int i = 0 ; i < 45 ; i++)
 		{
+			while(r == tmpI && c == tmpJ) // to avoid to select a repited index
+			{
+				r = rand() % 9;
+				c = rand() % 9;
+			}
 
+			while(!RepitedValueCheck (r , c , value))
+				value = rand() % 9 + 1;
+
+			Cells[r][c] = value; // set the value
+
+			tmpI = r;
+			tmpJ = c; // for next round of loop
 		}
 
 	}
@@ -43,7 +70,7 @@ public:
 		for(int i = 0 ; i < 9 ; i++)
 			if(i != r && Cells[i][c] == value)
 				return 0;
-			return 1;
+		return 1;
 	}
 	bool RepitedValueCheck(int r , int c , int value) // returns true if its not repited
 	{
@@ -51,6 +78,8 @@ public:
 			 return 1;
 		 return 0;
 	}
+
+
 
 private:
 	int Cells[9][9];

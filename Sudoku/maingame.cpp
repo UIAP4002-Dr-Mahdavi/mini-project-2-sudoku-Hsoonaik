@@ -9,13 +9,19 @@ MainGame::MainGame(QWidget *parent) :
 {
 	ui->setupUi(this);
 
-	Table Table;
+	Table T;
 
-	ui->tableWidget->clear ();
-	ui->tableWidget->setRowCount (9);
-	ui->tableWidget->setColumnCount (9);
 
-	setNewItem (1 , 1 , 54);
+	T.setRandomDatas ();
+	int value;
+	for(int i = 0 ; i < 9 ; i ++)
+		for(int j = 0 ; j < 9; j++)
+		{
+			value = T.getValue(i , j);
+			if(value == 0)
+				continue;
+			setNewItem (i , j , value);
+		}
 }
 
 MainGame::~MainGame()
@@ -23,16 +29,6 @@ MainGame::~MainGame()
 
 
 	delete ui;
-}
-
-
-void setRandomDatas(Table Table)
-{
-	for(int i ; i = 0 ; i < 9)
-		for(int j ; j = 0 ; j < 9)
-		{
-			int tmpI , tmpJ;
-		}
 }
 
 
