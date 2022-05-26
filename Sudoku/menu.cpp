@@ -2,6 +2,7 @@
 #include "ui_menu.h"
 #include <QMessageBox>
 #include <loginform.h>
+#include <maingame.h>
 Menu::Menu(QWidget *parent) :
 	QMainWindow(parent),
 	ui(new Ui::Menu)
@@ -41,8 +42,16 @@ void Menu::on_ExitBtn_clicked()
 
 void Menu::on_LogOutBtn_clicked()
 {
-	this->getUser ()->ClearData ();
+	this->getUser ().ClearData ();
 	LoginForm *F = new LoginForm();
+	this->close ();
+	F->show ();
+}
+
+void Menu::on_PlayBtn_clicked()
+{
+	MainGame *F = new MainGame();
+
 	this->close ();
 	F->show ();
 }

@@ -1,0 +1,14 @@
+release/loginform.o
+release/main.o
+release/maingame.o
+release/mainwindow.o
+release/menu.o
+release/signupform.o
+release/table.o
+release/user.o
+release/qrc_Logo.o
+release/moc_loginform.o
+release/moc_maingame.o
+release/moc_mainwindow.o
+release/moc_menu.o
+release/moc_signupform.o

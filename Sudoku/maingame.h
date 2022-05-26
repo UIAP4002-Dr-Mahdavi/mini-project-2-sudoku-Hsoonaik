@@ -1,0 +1,63 @@
+﻿#ifndef MAINGAME_H
+#define MAINGAME_H
+
+#include <QMainWindow>
+#include <ui_maingame.h>
+#include <table.h>
+#include <string>
+#include <qstring.h>
+
+using namespace std;
+namespace Ui {
+class MainGame;
+}
+
+class MainGame : public QMainWindow
+{
+	Q_OBJECT
+
+public:
+
+	//to set the text center of each cell
+	void setAlignmentCenter(int row, int column)
+	{
+		ui->tableWidget->item (row , column)->setTextAlignment (Qt::AlignCenter);
+	}
+
+	//#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
+
+	void setTableWidget(Table Table)
+	{
+
+		for(int i = 0 ; i < 9 ; i ++)
+			for(int j = 0 ; j < 9; j++)
+			{
+				Table.setValue (i , j , 5);
+				string tmp = to_string (Table.getValue (i , j));
+				QTableWidgetItem * Item = new QTableWidgetItem();
+				Item->setText (QString::fromStdString (tmp));
+				ui->tableWidget->setItem (i , j , Item);
+			}
+
+	}
+
+	//#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
+
+	void setNewItem(int r , int c , int Value)
+	{
+		ui->tableWidget->setItem( r, c, new QTableWidgetItem(QString::number (Value)));
+	}
+
+	//#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
+
+	explicit MainGame(QWidget *parent = nullptr);
+	~MainGame();
+
+private slots:
+	void on_tableWidget_cellChanged(int row, int column);
+
+private:
+	Ui::MainGame *ui;
+};
+
+#endif // MAINGAME_H

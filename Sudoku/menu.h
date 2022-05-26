@@ -20,12 +20,12 @@ public:
 
 	~Menu();
 
-	void SetUser(User * User)
+	void SetUser(User const & User)
 	{
 		this->User = User;
 	}
 
-	User * getUser()
+	User & getUser()
 	{
 		return User;
 	}
@@ -34,7 +34,7 @@ public:
 	void Welcome()
 	{
 		ui->WelcomeLB->clear ();
-		ui->WelcomeLB->setText (User->getFName ());
+		ui->WelcomeLB->setText (" " + User.getFName () + " " + User.getLName () + " , Welcome!");
 	}
 
 private slots:
@@ -42,8 +42,10 @@ private slots:
 
 	void on_LogOutBtn_clicked();
 
+	void on_PlayBtn_clicked();
+
 private:
-	User * User;
+	User User;
 	Ui::Menu *ui;
 };
 

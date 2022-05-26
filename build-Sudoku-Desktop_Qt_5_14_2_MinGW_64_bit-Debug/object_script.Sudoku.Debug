@@ -1,0 +1,14 @@
+debug/loginform.o
+debug/main.o
+debug/maingame.o
+debug/mainwindow.o
+debug/menu.o
+debug/signupform.o
+debug/table.o
+debug/user.o
+debug/qrc_Logo.o
+debug/moc_loginform.o
+debug/moc_maingame.o
+debug/moc_mainwindow.o
+debug/moc_menu.o
+debug/moc_signupform.o

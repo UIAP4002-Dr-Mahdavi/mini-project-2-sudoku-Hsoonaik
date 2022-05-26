@@ -22,12 +22,12 @@ public:
 
     ~LoginForm();
 
-	void SetUser(User * User)
+	void SetUser(User const & User)
 	{
 		this->User = User;
 	}
 
-	User * getUser()
+	User & getUser()
 	{
 		return User;
 	}
@@ -38,9 +38,9 @@ private slots:
 	void on_pushButton_2_clicked();
 
 private:
-	User * User;
+	User User;
     Ui::LoginForm *ui;
-	QString FName , LName , UserName , Password;
+	//QString FName , LName , UserName , Password;
 };
 
 #endif // LOGINFORM_H

@@ -2,4 +2,5 @@
 
 User::User()
 {
+	ExistOrNot = false;
 }

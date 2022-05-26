@@ -98,7 +98,7 @@ void SignUpForm::on_Register_clicked()
 {
 	User User;
 
-	User.SetData (FindId() , ui->FNamTB->text () , ui->LNameTB->text () , ui->UserNameTB->text()  , ui->PasswordTB->text ());
+	User.SetData (FindId() , ui->FNamTB->text () , ui->LNameTB->text () , ui->UserNameTB->text()  , ui->PasswordTB->text () , 1);
 
 
 	if(duplicate_username_check(User.getUsename ().toStdString()))
@@ -108,7 +108,7 @@ void SignUpForm::on_Register_clicked()
 		ShowMessage1 ("Your registration was successfully completed.");
 
 		LoginForm *F = new LoginForm;
-		F->SetUser(&User);
+		F->SetUser(User);
 		this->close();
 		F->show();
 	}

@@ -3,6 +3,9 @@
 #include <QString>
 #include <fstream>
 #include <iostream>
+#include <QMessageBox>
+#include <cstring>
+#include <QFile>
 using namespace std;
 class User
 {
@@ -10,13 +13,14 @@ public:
 	User();
 
 
-	void SetData(int id , QString FName , QString LName , QString Username , QString Password)
+	void SetData(int id , QString FName , QString LName , QString Username , QString Password , bool ExistOrNot = 1)
 	{
 		this->id = id;
 		this->FName = FName;
 		this->LName = LName;
 		this->Username = Username;
 		this->Password = Password;
+		this->ExistOrNot = ExistOrNot;
 	}
 
 	QString getFName()
@@ -38,6 +42,11 @@ public:
 	int getId()
 	{
 		return id;
+	}
+
+	bool getExistOrNot()
+	{
+		return ExistOrNot;
 	}
 
 	void ClearData()
@@ -67,12 +76,64 @@ public:
 	}
 
 
+
+	bool LoadData(string EntryUsername , string EntryPassword)
+	{
+		string Username, Password , FName , LName;
+		int id;
+		int Check = 0; //must be 2 to be true
+
+		ifstream File("UserData.txt" , ios::in | ios::app);
+
+		if (!File)
+		{
+			QMessageBox msgBox;
+			msgBox.setInformativeText("The username or password is incorrect.");
+			msgBox.setStandardButtons(QMessageBox::Ok);
+			msgBox.setStyleSheet ("background-color : #0a0e1a; color : #FFFFFF; width : 300px;font:  10pt \"Rockwell Extra Bold\";");
+			msgBox.setDefaultButton(QMessageBox::Ok);
+			msgBox.exec();
+		}
+
+		while (File.is_open())
+		{
+			File >> Username;
+			//File >> Password;
+
+			if(Username == EntryUsername)
+			{
+				Check++;
+				break;
+			}
+			if(File.eof())
+				File.close();
+		}
+
+		while (File.is_open())
+		{
+			//File >> Username;
+			File >> Password;
+
+			if(Password == EntryPassword)
+			{
+				Check++;
+				break;
+			}
+			if(File.eof())
+				File.close();
+		}
+		if(Check == 2)
+			return 1;
+		return 0;
+	}
+
 private :
 	int id;
 	QString FName;
 	QString LName;
 	QString Username;
 	QString Password;
+	bool ExistOrNot;
 
 };
 

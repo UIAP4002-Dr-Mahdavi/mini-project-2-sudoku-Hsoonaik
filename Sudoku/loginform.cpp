@@ -8,7 +8,6 @@
 #include <iostream>
 #include <menu.h>
 #include "ui_menu.h"
-
 using namespace std;
 
 LoginForm::LoginForm(QWidget *parent) :
@@ -23,8 +22,6 @@ LoginForm::~LoginForm()
     delete ui;
 }
 
-
-
 void LoginForm::on_pushButton_clicked() //for sign up now !!
 {
     SignUpForm *S = new SignUpForm;
@@ -33,6 +30,7 @@ void LoginForm::on_pushButton_clicked() //for sign up now !!
     S->show ();
 }
 
+// ToShow message
 int ShowMessage(QString Message)
 {
 	QMessageBox msgBox;
@@ -45,9 +43,12 @@ int ShowMessage(QString Message)
 }
 
 
+//to check that the entry username password is valid or not
 bool FindData(string EntryUsername , string EntryPassword)
 {
-	string Username, Password;
+	string Username, Password , FName , LName;
+	int id;
+
 	int Check = 0; //must be 2 to be true
 
 	ifstream File("UserData.txt" , ios::in | ios::app);
@@ -85,7 +86,11 @@ bool FindData(string EntryUsername , string EntryPassword)
 			File.close();
 	}
 	if(Check == 2)
+	{
+		File >> FName >> LName >> id;
 		return 1;
+	}
+
 	return 0;
 
 
@@ -97,12 +102,11 @@ bool FindData(string EntryUsername , string EntryPassword)
 
 void LoginForm::on_pushButton_2_clicked()
 {
-	if(FindData(ui->UsernameTB->text ().toStdString() , ui->PasswordTB->text ().toStdString())) // Username and Password were found
+	if(User.LoadData(ui->UsernameTB->text ().toStdString() , ui->PasswordTB->text ().toStdString())) // Username and Password were found
 	{
 		Menu *F = new Menu();
-		//F->SetUser (User);
-		//F->Welcome ();
-		//F->ui->WelcomeLB->setText (this->getUser ()->getFName ());
+		F->SetUser (User);
+		F->Welcome ();
 		this->close ();
 		F->show ();
 	}

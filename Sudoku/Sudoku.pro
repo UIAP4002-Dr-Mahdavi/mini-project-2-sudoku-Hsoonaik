@@ -18,21 +18,26 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     loginform.cpp \
     main.cpp \
+    maingame.cpp \
     mainwindow.cpp \
     menu.cpp \
     signupform.cpp \
+    table.cpp \
     user.cpp
 
 HEADERS += \
     loginform.h \
+    maingame.h \
     mainwindow.h \
     menu.h \
     signupform.h \
+    table.h \
     user.h
 
 FORMS += \
     SplashForm.ui \
     loginform.ui \
+    maingame.ui \
     menu.ui \
     signupform.ui
 
