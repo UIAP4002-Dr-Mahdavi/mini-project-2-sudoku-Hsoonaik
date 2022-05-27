@@ -46,7 +46,7 @@ public:
         centralwidget->setMaximumSize(QSize(597, 558));
         line = new QFrame(centralwidget);
         line->setObjectName(QString::fromUtf8("line"));
-        line->setGeometry(QRect(193, -3, 16, 464));
+        line->setGeometry(QRect(193, -3, 16, 463));
         line->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 0);\n"
 "color: rgb(255, 255, 0);\n"
 "margin  : 5px;\n"
@@ -62,7 +62,7 @@ public:
         line->setFrameShadow(QFrame::Sunken);
         line_2 = new QFrame(centralwidget);
         line_2->setObjectName(QString::fromUtf8("line_2"));
-        line_2->setGeometry(QRect(392, -3, 16, 464));
+        line_2->setGeometry(QRect(392, -3, 16, 463));
         line_2->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 0);\n"
 "color: rgb(255, 255, 0);\n"
 "margin  : 5px;\n"

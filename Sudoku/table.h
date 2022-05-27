@@ -4,6 +4,7 @@
 #include <iostream>
 #include<time.h>
 
+
 class Table
 {
 
@@ -15,6 +16,17 @@ public:
 			for(int j = 0 ; j < 9 ; j++)
 				Cells[i][j] = 0;
 	}
+
+	bool isFull() // returns true if its full
+	{
+		for(int i = 0 ; i < 9 ; i++)
+			for(int j = 0 ; j < 9 ; j++)
+				if(Cells[i][j] == 0)
+					return 0;
+		return 1;
+	}
+
+
 
 	void setValue(int i , int j , int Data)
 	{

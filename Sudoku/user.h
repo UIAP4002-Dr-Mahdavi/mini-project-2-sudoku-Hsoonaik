@@ -11,7 +11,7 @@ class User
 {
 public:
 	User();
-
+	friend class MainGame;
 
 	void SetData(int id , QString FName , QString LName , QString Username , QString Password , bool ExistOrNot = 1)
 	{
@@ -59,7 +59,7 @@ public:
 
 	void SaveData()
 	{
-		ofstream File("UserData.txt" , ios::out | ios::app);
+		ofstream File("UserDataToShow.txt" , ios::out | ios::app);
 		if (!File)
 		{
 		cerr << "some thing wrong during opening file!" << endl;
@@ -70,8 +70,95 @@ public:
 		File << "Username : " << Username.toStdString () << endl;
 		File << "Password : " << Password.toStdString () << endl;
 		File << "###############################" << endl;
-
 		File.close ();
+
+
+
+	}
+
+	void SaveSolvedTableCount()
+	{
+		ofstream File;
+		if (!File)
+		{
+		cerr << "some thing wrong during opening file!" << endl;
+		exit(1);
+		}
+		File.open ("User.dat" , ios::out | ios::app);
+		File << Username.toStdString () << " " << SolvedTables << endl;
+		File.close ();
+	}
+	void LoadSolvedTableCount()
+	{
+		string tmpUsrnm;
+		int tmpSlvdTbles;
+		ifstream File;
+		if (!File)
+		{
+		cerr << "some thing wrong during opening file!" << endl;
+		exit(1);
+		}
+		File.open ("User.dat" , ios::in | ios::app);
+		while(File.is_open ())
+		{
+			File >> tmpUsrnm;
+			if(tmpUsrnm == this->Username.toStdString ())
+				File >> tmpSlvdTbles;
+			this->SolvedTables = tmpSlvdTbles;
+		}
+	}
+
+	void Sort ()
+	{
+		int c = 0 , Array[200];
+
+		string tmpUsrnm;
+		int tmpSlvdTbles;
+		ifstream iFile;
+		if (!iFile)
+		{
+		cerr << "some thing wrong during opening file!" << endl;
+		exit(1);
+		}
+		iFile.open ("User.dat" , ios::in | ios::app);
+		while(iFile.is_open ())
+		{
+			iFile >> tmpSlvdTbles;
+			Array[c] = tmpSlvdTbles;
+			c++;
+		}
+		iFile.close ();
+
+
+		for(int i = 0; i < c - 1 ; i++)
+		{
+			int max = Array[i];
+			int imax = i;
+			for(int j = i + 1; j < c; j++)
+			{
+				if(Array[j] > max)
+				{
+					max = Array[j];
+					imax = j;
+				}
+			}
+			Array[imax] = Array[i];
+			Array[i] = max;
+		}
+
+
+		ofstream oFile;
+		if (!oFile)
+		{
+		cerr << "some thing wrong during opening file!" << endl;
+		exit(1);
+		}
+		oFile.open ("User.dat" , ios::out | ios::app | ios::trunc);
+
+		for(int i = 0; i < c; i++)
+		{
+			oFile << Array[i];
+		}
 
 	}
 
@@ -79,11 +166,10 @@ public:
 
 	bool LoadData(string EntryUsername , string EntryPassword)
 	{
-		string Username, Password , FName , LName;
-		int id;
+		string Username, Password ;
 		int Check = 0; //must be 2 to be true
 
-		ifstream File("UserData.txt" , ios::in | ios::app);
+		ifstream File("UserDataToShow.txt" , ios::in | ios::app );
 
 		if (!File)
 		{
@@ -123,7 +209,13 @@ public:
 				File.close();
 		}
 		if(Check == 2)
+		{
+			this->Username = QString::fromStdString(Username);
+			this->Password = QString::fromStdString (Password);
+
+			cerr << this->Username.toStdString ();
 			return 1;
+		}
 		return 0;
 	}
 
@@ -133,6 +225,7 @@ private :
 	QString LName;
 	QString Username;
 	QString Password;
+	int SolvedTables = 0;
 	bool ExistOrNot;
 
 };

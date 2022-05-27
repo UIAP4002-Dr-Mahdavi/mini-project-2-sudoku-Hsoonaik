@@ -50,7 +50,7 @@ void Menu::on_LogOutBtn_clicked()
 
 void Menu::on_PlayBtn_clicked()
 {
-	MainGame *F = new MainGame();
+	MainGame *F = new MainGame(User);
 
 	this->close ();
 	F->show ();

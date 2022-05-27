@@ -7,6 +7,7 @@
 #include <string>
 #include <qstring.h>
 #include <table.h>
+#include <user.h>
 using namespace std;
 namespace Ui {
 class MainGame;
@@ -56,7 +57,20 @@ public:
 	{
 		this->T = T;
 	}
-	explicit MainGame(QWidget *parent = nullptr);
+
+	void setUser(User const &U)
+	{
+		this->U = U;
+	}
+
+	User & getUser()
+	{
+		return U;
+	}
+
+
+
+	explicit MainGame(User U ,  QWidget *parent = nullptr);
 	~MainGame();
 
 private slots:
@@ -64,6 +78,7 @@ private slots:
 
 private:
 	Table T;
+	User U;
 	Ui::MainGame *ui;
 };
 

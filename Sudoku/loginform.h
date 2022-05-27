@@ -24,12 +24,12 @@ public:
 
 	void SetUser(User const & User)
 	{
-		this->User = User;
+		this->U = User;
 	}
 
 	User & getUser()
 	{
-		return User;
+		return U;
 	}
 
 private slots:
@@ -38,7 +38,7 @@ private slots:
 	void on_pushButton_2_clicked();
 
 private:
-	User User;
+	User U;
     Ui::LoginForm *ui;
 	//QString FName , LName , UserName , Password;
 };

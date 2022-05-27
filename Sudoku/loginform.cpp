@@ -43,69 +43,14 @@ int ShowMessage(QString Message)
 }
 
 
-//to check that the entry username password is valid or not
-bool FindData(string EntryUsername , string EntryPassword)
-{
-	string Username, Password , FName , LName;
-	int id;
-
-	int Check = 0; //must be 2 to be true
-
-	ifstream File("UserData.txt" , ios::in | ios::app);
-
-	if (!File)
-	{
-		ShowMessage("The username or password is incorrect.");
-	}
-
-	while (File.is_open())
-	{
-		File >> Username;
-		//File >> Password;
-
-		if(Username == EntryUsername)
-		{
-			Check++;
-			break;
-		}
-		if(File.eof())
-			File.close();
-	}
-
-	while (File.is_open())
-	{
-		//File >> Username;
-		File >> Password;
-
-		if(Password == EntryPassword)
-		{
-			Check++;
-			break;
-		}
-		if(File.eof())
-			File.close();
-	}
-	if(Check == 2)
-	{
-		File >> FName >> LName >> id;
-		return 1;
-	}
-
-	return 0;
-
-
-}
-
-
-
 
 
 void LoginForm::on_pushButton_2_clicked()
 {
-	if(User.LoadData(ui->UsernameTB->text ().toStdString() , ui->PasswordTB->text ().toStdString())) // Username and Password were found
+	if(U.LoadData(ui->UsernameTB->text ().toStdString() , ui->PasswordTB->text ().toStdString())) // Username and Password were found
 	{
 		Menu *F = new Menu();
-		F->SetUser (User);
+		F->SetUser (U);
 		F->Welcome ();
 		this->close ();
 		F->show ();
@@ -117,5 +62,7 @@ void LoginForm::on_pushButton_2_clicked()
 		ui->UsernameTB->clear();
 		ui->PasswordTB->clear();
 	}
+
+
 
 }
