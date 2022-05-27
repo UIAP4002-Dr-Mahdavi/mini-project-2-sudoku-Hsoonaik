@@ -53,7 +53,7 @@ public:
 		c = rand() % 9;
 		value = rand() % 9 + 1;
 
-		for(int i = 0 ; i < 45 ; i++)
+		for(int i = 0 ; i < 35 ; i++)
 		{
 			while(r == tmpI && c == tmpJ) // to avoid to select a repited index
 			{
