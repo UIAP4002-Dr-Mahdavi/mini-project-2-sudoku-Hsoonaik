@@ -16,6 +16,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    about.cpp \
     loginform.cpp \
     main.cpp \
     maingame.cpp \
@@ -26,6 +27,7 @@ SOURCES += \
     user.cpp
 
 HEADERS += \
+    about.h \
     loginform.h \
     maingame.h \
     mainwindow.h \
@@ -36,6 +38,7 @@ HEADERS += \
 
 FORMS += \
     SplashForm.ui \
+    about.ui \
     loginform.ui \
     maingame.ui \
     menu.ui \

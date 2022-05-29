@@ -44,6 +44,8 @@ private slots:
 
 	void on_PlayBtn_clicked();
 
+	void on_SolvedTablesBtn_clicked();
+
 private:
 	User User;
 	Ui::Menu *ui;

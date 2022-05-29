@@ -3,6 +3,7 @@
 #include <QMessageBox>
 #include <loginform.h>
 #include <maingame.h>
+#include <about.h>
 Menu::Menu(QWidget *parent) :
 	QMainWindow(parent),
 	ui(new Ui::Menu)
@@ -52,6 +53,13 @@ void Menu::on_PlayBtn_clicked()
 {
 	MainGame *F = new MainGame(User);
 
+	this->close ();
+	F->show ();
+}
+
+void Menu::on_SolvedTablesBtn_clicked()
+{
+	About *F = new About();
 	this->close ();
 	F->show ();
 }

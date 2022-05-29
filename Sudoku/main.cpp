@@ -12,9 +12,9 @@ int main(int argc, char *argv[])
 
 	//Showing splash form
 	{
-//	w.setWindowOpacity (0.0);
-//	w.show();
-//	w.SplashEffect ();
+	w.setWindowOpacity (0.0);
+	w.show();
+	w.SplashEffect ();
 	}
 
 	w.close ();
