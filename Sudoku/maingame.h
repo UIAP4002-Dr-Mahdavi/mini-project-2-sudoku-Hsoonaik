@@ -76,6 +76,8 @@ public:
 private slots:
 	void on_tableWidget_cellChanged(int row, int column);
 
+	void on_Register_2_clicked();
+
 private:
 	Table T;
 	User U;

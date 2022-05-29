@@ -34,7 +34,7 @@ public:
 	void Welcome()
 	{
 		ui->WelcomeLB->clear ();
-		ui->WelcomeLB->setText (" " + User.getFName () + " " + User.getLName () + " , Welcome!");
+		ui->WelcomeLB->setText (" " + User.getUsename () + " , Welcome!");
 	}
 
 private slots:

@@ -5,6 +5,7 @@
 #include <string>
 #include <QMessageBox>
 #include <menu.h>
+#include <QString>
 MainGame::MainGame(User U , QWidget *parent) :
 	QMainWindow(parent),
 	ui(new Ui::MainGame)
@@ -27,6 +28,19 @@ MainGame::MainGame(User U , QWidget *parent) :
 			setNewItem (i , j , value);
 		}
 	T.setRandomDone = true;
+
+
+	U.LoadSolvedTableCount ();
+	ui->SolvedNumLbl->clear ();
+	switch (U.SolvedTables)
+	{
+	case 1 :
+		ui->SolvedNumLbl->setText ("You have solved " + QString::number(U.SolvedTables) + " table");
+		break;
+	default:
+		ui->SolvedNumLbl->setText ("You have solved " + QString::number(U.SolvedTables) + " tables");
+		break;
+	}
 }
 
 MainGame::~MainGame()
@@ -49,6 +63,8 @@ int ShowMessage_MainGame(QString Message)
 	return R;
 }
 
+
+
 void MainGame::on_tableWidget_cellChanged(int row, int column) // Change text
 {
 	//to set the alignment in center
@@ -57,14 +73,15 @@ void MainGame::on_tableWidget_cellChanged(int row, int column) // Change text
 	if(T.setRandomDone)
 	{
 		int value = ui->tableWidget->item (row , column)->text ().toInt ();
-
 		if(value == -1)
 		{
-			ui->tableWidget->item (row , column)->setText ("!");
+			ui->tableWidget->item (row , column)->setText ("<>");
 			T.Cells[row][column] = value;
 		}
 
-		else if(!T.RepitedValueCheck (row , column , value) || !T.RepitedInSquareCheck(row , column , value) || value > 9 || value < 1)
+		else if(ui->tableWidget->item (row , column)->text () == "<>");
+
+		else if(!T.RepitedValueCheck (row , column , value) || !T.RepitedInSquareCheck(row , column , value) || value > 9 ||value < 1 )
 			ui->tableWidget->item (row , column)->setText ("!");
 
 		else
@@ -73,6 +90,12 @@ void MainGame::on_tableWidget_cellChanged(int row, int column) // Change text
 		QColor Green (255, 255, 0);
 		ui->tableWidget->item (row , column)->setBackgroundColor (Green);
 		ui->tableWidget->item (row , column)->setTextColor (Qt:: black) ;
+
+
+		//JUST FOR TEST
+//		for(int i = 0 ; i < 9; i++)
+//			for(int j = 0 ; j < 9; j++)
+//				T.Cells[i][j] = -1;
 	}
 
 	//for random nums
@@ -84,12 +107,12 @@ void MainGame::on_tableWidget_cellChanged(int row, int column) // Change text
 
 	if(T.isFull ()) // check if game is over or not
 	{
-		U.SaveSolvedTableCount ();
 		U.LoadSolvedTableCount ();
 		U.SolvedTables += 1;
 		U.SaveSolvedTableCount ();
+		U.Sort ();
 
-
+		T.~Table ();
 
 		int R = ShowMessage_MainGame("You win.\nWanna play another round");
 
@@ -109,4 +132,11 @@ void MainGame::on_tableWidget_cellChanged(int row, int column) // Change text
 	}
 
 
+}
+
+void MainGame::on_Register_2_clicked()
+{
+	Menu *F = new Menu();
+	this->close();
+	F->show ();
 }

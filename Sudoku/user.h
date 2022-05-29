@@ -59,11 +59,11 @@ public:
 
 	void SaveData()
 	{
-		ofstream File("UserDataToShow.txt" , ios::out | ios::app);
+		ofstream File("UserDataToShow.dat" , ios::out | ios::app);
 		if (!File)
 		{
-		cerr << "some thing wrong during opening file!" << endl;
-		exit(1);
+			cerr << "some thing wrong during opening file!" << endl;
+			exit(1);
 		}
 		File << "id : " << id << endl;
 		File << "Name : " << FName.toStdString () << " " << LName.toStdString () << endl;
@@ -78,13 +78,13 @@ public:
 
 	void SaveSolvedTableCount()
 	{
-		ofstream File;
+		ofstream File("User.txt" , ios::out | ios::app);
+
 		if (!File)
 		{
-		cerr << "some thing wrong during opening file!" << endl;
-		exit(1);
+			cerr << "some thing wrong during opening file!" << endl;
+			exit(1);
 		}
-		File.open ("User.dat" , ios::out | ios::app);
 		File << Username.toStdString () << " " << SolvedTables << endl;
 		File.close ();
 	}
@@ -93,73 +93,98 @@ public:
 		string tmpUsrnm;
 		int tmpSlvdTbles;
 		ifstream File;
+		File.open ("User.txt" , ios::in | ios::app);
 		if (!File)
 		{
-		cerr << "some thing wrong during opening file!" << endl;
-		exit(1);
+			cerr << "some thing wrong during opening file!" << endl;
+			exit(1);
 		}
-		File.open ("User.dat" , ios::in | ios::app);
-		while(File.is_open ())
+		while(File.is_open())
 		{
 			File >> tmpUsrnm;
 			if(tmpUsrnm == this->Username.toStdString ())
 				File >> tmpSlvdTbles;
 			this->SolvedTables = tmpSlvdTbles;
+			if(File.eof())
+				File.close();
 		}
 	}
 
 	void Sort ()
 	{
-		int c = 0 , Array[200];
+		int c = 0  , NumArray[200];
+		string UsrArray[200];
 
 		string tmpUsrnm;
 		int tmpSlvdTbles;
-		ifstream iFile;
-		if (!iFile)
+
+		ifstream File;
+		File.open ("User.txt" , ios::in | ios::app);
+
+		if (!File)
 		{
-		cerr << "some thing wrong during opening file!" << endl;
-		exit(1);
+			cerr << "some thing wrong during opening file!" << endl;
+			exit(1);
 		}
-		iFile.open ("User.dat" , ios::in | ios::app);
-		while(iFile.is_open ())
+
+		while(File.is_open())
 		{
-			iFile >> tmpSlvdTbles;
-			Array[c] = tmpSlvdTbles;
+			File >> tmpUsrnm;
+			File >> tmpSlvdTbles;
+			NumArray[c] = tmpSlvdTbles;
+			UsrArray[c] = tmpUsrnm;
 			c++;
+
+			if(File.eof())
+				File.close();
 		}
-		iFile.close ();
 
 
 		for(int i = 0; i < c - 1 ; i++)
 		{
-			int max = Array[i];
-			int imax = i;
+			int min = NumArray[i];
+			int imin = i;
 			for(int j = i + 1; j < c; j++)
 			{
-				if(Array[j] > max)
+				if(NumArray[j] < min)
 				{
-					max = Array[j];
-					imax = j;
+					min = NumArray[j];
+					imin = j;
 				}
 			}
-			Array[imax] = Array[i];
-			Array[i] = max;
+			NumArray[imin] = NumArray[i];
+			NumArray[i] = min;
+
+			string tmp = UsrArray[imin];
+			UsrArray[imin] = UsrArray[i];
+			UsrArray[i] = tmp;
+
+
 		}
+		ClrFile();
+		fstream File2;
+		File2.open("User.txt" , ios::out | ios::app );
 
-
-		ofstream oFile;
-		if (!oFile)
+		if (!File2)
 		{
-		cerr << "some thing wrong during opening file!" << endl;
-		exit(1);
+			cerr << "some thing wrong during opening file!" << endl;
+			exit(1);
 		}
-		oFile.open ("User.dat" , ios::out | ios::app | ios::trunc);
-
 		for(int i = 0; i < c; i++)
 		{
-			oFile << Array[i];
+			if(UsrArray[i] == UsrArray[i + 1])
+				continue;
+			else
+				File2 << UsrArray[i] << " " << NumArray[i] << endl;
+
 		}
 
+	}
+
+	void ClrFile()
+	{
+		ofstream file("User.txt" , ios::out);
+		file<<"";
 	}
 
 
@@ -169,7 +194,7 @@ public:
 		string Username, Password ;
 		int Check = 0; //must be 2 to be true
 
-		ifstream File("UserDataToShow.txt" , ios::in | ios::app );
+		ifstream File("UserDataToShow.dat" , ios::in | ios::app );
 
 		if (!File)
 		{

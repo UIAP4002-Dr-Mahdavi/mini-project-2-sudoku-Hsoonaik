@@ -59,7 +59,7 @@ font:  30pt &quot;Rockwell Extra Bold&quot;;
      <rect>
       <x>70</x>
       <y>100</y>
-      <width>271</width>
+      <width>274</width>
       <height>301</height>
      </rect>
     </property>
@@ -77,7 +77,7 @@ padding : 5px;
 border-radius : 15px;</string>
        </property>
        <property name="text">
-        <string>Solved tables</string>
+        <string>About this game</string>
        </property>
       </widget>
      </item>

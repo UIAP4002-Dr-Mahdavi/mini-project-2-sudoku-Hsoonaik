@@ -17,6 +17,16 @@ public:
 				Cells[i][j] = 0;
 	}
 
+	~Table()
+	{
+		for(int i = 0 ; i < 9; i++)
+			for(int j = 0 ; j < 9; j++)
+				this->Cells[i][j] = 0;
+		this->setRandomDone = false;
+
+	}
+
+
 	bool isFull() // returns true if its full
 	{
 		for(int i = 0 ; i < 9 ; i++)

@@ -55,7 +55,7 @@ string find_username(string tmp)
 {
 	 string Username;
 
-	 ifstream File("UserData.txt" , ios::in | ios::app);
+	 ifstream File("UserDataToShow.dat" , ios::in | ios::app);
 
 	 if (!File)
 	 {
